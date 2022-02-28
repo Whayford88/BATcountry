@@ -1,7 +1,119 @@
-echo "# BATcountry" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Whayford88/BATcountry.git
-git push -u origin main
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Single Page Sliding Layout - Design Shack Demo</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="shortcut icon" href="https://designshack.net/favicon.ico">
+  <link rel="icon" href="https://designshack.net/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+</head>
+  <div id="w">
+    <div id="content">
+      <nav id="stickynav">
+        <ul id="nav" class="clearfix">
+          <li><a href="#topbar">Homepage</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#photos">Photos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      ....
+    </section>
+CSS Page Design
+#topbar {
+  background: #4f4a41;
+  padding: 10px 0 10px 0;
+  text-align: center;
+  height: 36px;
+  overflow: hidden;
+  -webkit-transition: height 0.5s linear;
+  -moz-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+}
+#topbar a {
+  color: #fff;
+  font-size:1.3em;
+  line-height: 1.25em;
+  text-decoration: none;
+  opacity: 0.5;
+  font-weight: bold;
+}
+#topbar a:hover {
+  opacity: 1;
+}
+ 
+#stickynav {
+  display: block;
+  height: 35px;
+  width: 100%;
+  z-index: 9999;
+}
+ 
+#stickynav #nav { position: fixed; z-index: 9999; }
+#stickynav #nav li { display: inline; }
+#stickynav #nav li a {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 5px 7px;
+  background: #cce4c4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#stickynav #nav li a:hover { 
+  text-decoration: none;
+  background: #d8f0d0;
+}
+form .basic {
+  display: block;
+  font-size: 1.5em;
+  color: #555;
+  font-family: Arial, Tahoma, sans-serif;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+}
+ 
+form .basictxt {
+  display: block;
+  width: 550px;
+  height: 180px;
+  font-family: Arial, Tahoma, sans-serif;
+  color: #666;
+  padding: 5px 8px;
+  font-size: 1.6em;
+  line-height: 1.4em;
+}
+ 
+/** page structure **/
+#w {
+  display: block;
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+ 
+#content {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 25px 20px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+$(function(){
+  $("#nav a").click(function(e){
+    e.preventDefault();
+    $('html,body').scrollTo(this.hash,this.hash); 
+  });
+});
